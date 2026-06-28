@@ -31,8 +31,23 @@
 
 ---
 
+## 📦 Data Source & Attribution
+
+The exercise data, thumbnail images, and animation GIFs in this repository originate from the
+**[Fitness Exercises Dataset by *omarxadel* on Kaggle](https://www.kaggle.com/datasets/omarxadel/fitness-exercises-dataset)**.
+
+- The English instructions and **all media** (images & GIFs) come from that dataset.
+- The **Spanish 🇪🇸, Italian 🇮🇹, and Turkish 🇹🇷 translations** were added in this repository on top of the original English data.
+
+> **License:** Please refer to the **[license stated on the original Kaggle dataset page](https://www.kaggle.com/datasets/omarxadel/fitness-exercises-dataset)** before reusing the media.
+> The images and GIFs remain the property of their original creators and are included here **for educational, non-commercial use only**.
+> If you are a rights holder and want your content removed, please [open an issue](../../issues).
+
+---
+
 ## 📋 Table of Contents
 
+- [Data Source & Attribution](#-data-source--attribution)
 - [Overview](#-overview)
 - [Interactive Browser & Developer Setup](#-interactive-browser--developer-setup)
 - [File Structure](#-file-structure)
@@ -63,10 +78,8 @@ Each exercise entry contains:
 | Target | Specific target muscle |
 | Muscle Group | Supporting / synergist muscles |
 | Equipment | Equipment required (or `body weight` for bodyweight) |
-| Instructions (EN) | Step-by-step instructions in English |
-| Instructions (ES) | Step-by-step instructions in Spanish |
-| Instructions (IT) | Step-by-step instructions in Italian |
-| Instructions (TR) | Step-by-step instructions in Turkish |
+| Instructions | Step-by-step instructions for each exercise |
+| Available Languages | 🇬🇧 English · 🇪🇸 Spanish · 🇮🇹 Italian · 🇹🇷 Turkish |
 | Thumbnail | Static `.jpg` preview image |
 | Animation GIF | `.gif` animation showing the movement |
 
@@ -412,5 +425,7 @@ This project is for **educational and non-commercial purposes only**.
 - You **may not** use this dataset or its media for any commercial application or product.
 - All images and videos are property of their respective copyright holders.
 - For commercial use, please contact the original content owners directly.
+
+> **Data source:** Original data and media from the [Fitness Exercises Dataset by *omarxadel* on Kaggle](https://www.kaggle.com/datasets/omarxadel/fitness-exercises-dataset) — see the [Data Source & Attribution](#-data-source--attribution) section above and the original dataset's license for reuse terms.
 
 If you are a copyright holder and wish to have your content removed, please [open an issue](../../issues).
