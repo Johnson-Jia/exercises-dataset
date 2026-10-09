@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Developer Setup · ExerciseDB</title>
+  <title>开发者向导 · ExerciseDB</title>
   <style>
     /* ── Design Tokens ──────────────────────────────── */
     :root {
@@ -470,12 +470,12 @@
 <header class="site-header">
   <div class="site-logo">Exercise<span>DB</span></div>
   <div class="header-divider"></div>
-  <span class="header-label">Developer Setup</span>
+  <span class="header-label">开发者向导</span>
   <a class="back-link" href="index.html">
     <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M10 4L6 8l4 4"/>
     </svg>
-    Back to Browse
+    返回浏览
   </a>
 </header>
 
@@ -484,7 +484,7 @@
 
   <!-- Left Nav -->
   <nav class="page-nav" id="page-nav">
-    <div class="nav-group-label">Contents</div>
+    <div class="nav-group-label">目录</div>
     <a class="nav-link active" href="#db-setup" data-section="db-setup">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
         <ellipse cx="8" cy="4" rx="6" ry="2.5"/>
@@ -492,7 +492,7 @@
         <path d="M2 7v3c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5V7"/>
         <path d="M2 10v2c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5v-2"/>
       </svg>
-      Database Setup
+      数据库设置
     </a>
     <div class="nav-spacer"></div>
     <a class="nav-link" href="#api-integration" data-section="api-integration">
@@ -501,7 +501,7 @@
         <polyline points="11 4 15 8 11 12"/>
         <line x1="8" y1="2" x2="8" y2="14"/>
       </svg>
-      API Integration
+      API 集成
     </a>
     <div class="nav-spacer"></div>
     <a class="nav-link" href="#ask-llm" data-section="ask-llm">
@@ -509,7 +509,7 @@
         <path d="M14 2H2a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h3l3 2 3-2h3a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/>
         <path d="M8 6v2M8 10h.01"/>
       </svg>
-      Ask Your LLM
+      咨询你的 LLM
     </a>
   </nav>
 
@@ -520,9 +520,9 @@
     <section class="section" id="db-setup">
       <div class="section-header">
         <div class="section-num">1</div>
-        <h2 class="section-title">Database Setup</h2>
+        <h2 class="section-title">数据库设置</h2>
       </div>
-      <p class="section-desc">Import all 1,324 exercises into your database in 3 steps. Choose your database engine below.</p>
+      <p class="section-desc">按以下 3 步将全部 1,324 个动作导入你的数据库。请选择你的数据库引擎。</p>
 
       <div class="section-body">
         <!-- DB Tabs -->
@@ -538,10 +538,10 @@
           <div class="step">
             <div class="step-num">1</div>
             <div class="step-body">
-              <h3 class="step-title">Create Table</h3>
-              <p class="step-desc">Run this in your database client (SSMS, DBeaver, pgAdmin, TablePlus, etc.):</p>
+              <h3 class="step-title">创建数据表</h3>
+              <p class="step-desc">在数据库客户端(SSMS、DBeaver、pgAdmin、TablePlus 等)中执行以下语句:</p>
               <div class="code-block">
-                <button class="copy-btn" id="copy-create-btn">Copy</button>
+                <button class="copy-btn" id="copy-create-btn">复制</button>
                 <pre class="code-pre" id="create-table-sql"></pre>
               </div>
             </div>
@@ -551,14 +551,14 @@
           <div class="step">
             <div class="step-num">2</div>
             <div class="step-body">
-              <h3 class="step-title">Import Data</h3>
-              <p class="step-desc">Generate a <code>.sql</code> file with all 1,324 INSERT statements. The file is built entirely in your browser — nothing is uploaded to any server.</p>
+              <h3 class="step-title">导入数据</h3>
+              <p class="step-desc">生成包含全部 1,324 条 INSERT 语句的 <code>.sql</code> 文件。文件完全在浏览器本地生成——不会向任何服务器上传数据。</p>
               <div style="display:flex;align-items:center;gap:0;">
                 <button class="generate-btn" id="generate-sql-btn">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
                     <path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/>
                   </svg>
-                  Generate INSERT SQL
+                  生成 INSERT SQL
                 </button>
                 <span class="generate-status" id="generate-status"></span>
               </div>
@@ -569,18 +569,17 @@
           <div class="step">
             <div class="step-num">3</div>
             <div class="step-body">
-              <h3 class="step-title">Media Files</h3>
-              <p class="step-desc">Download the media archives and place them in your web server root or CDN. The <code>image</code> and <code>gif_url</code> columns store relative paths — prepend your base URL in your app.</p>
+              <h3 class="step-title">媒体文件</h3>
+              <p class="step-desc">将 <code>media/</code> 文件夹放到你的 Web 服务器根目录或 CDN。<code>image</code> 和 <code>gif_url</code> 列存储的是相对路径——在应用中拼接你的基础 URL 即可。</p>
               <div class="code-block">
                 <pre class="code-pre">your-server.com/
-├── images/   ← 1,324 JPG thumbnails
-└── videos/   ← 1,324 GIF animations</pre>
+└── media/    ← 1,324 个 GIF 动作演示</pre>
               </div>
               <div class="media-note">
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px">
                   <circle cx="8" cy="8" r="6"/><path d="M8 7v4M8 5.5h.01"/>
                 </svg>
-                The <code>images/</code> and <code>videos/</code> folders are already included in the repository. After cloning, just copy them to your server or CDN — no separate download needed.
+                本仓库已包含 <code>media/</code> 文件夹(1324 张 GIF)。克隆后直接复制到你的服务器或 CDN 即可——无需单独下载。
               </div>
             </div>
           </div>
@@ -594,14 +593,14 @@
     <section class="section" id="api-integration">
       <div class="section-header">
         <div class="section-num">2</div>
-        <h2 class="section-title">API Integration</h2>
+        <h2 class="section-title">API 集成</h2>
       </div>
-      <p class="section-desc">Client-side code examples showing how to call your backend API from your app. Enter your API base URL below — all examples update live.</p>
+      <p class="section-desc">展示如何在你的应用中调用后端 API 的前端代码示例。在下方输入你的 API 基础 URL——所有示例会实时更新。</p>
 
       <div class="section-body">
         <!-- Base URL Input -->
         <div class="url-input-row">
-          <span class="url-label">BASE URL</span>
+          <span class="url-label">基础 URL</span>
           <input
             type="url"
             class="url-input"
@@ -631,11 +630,11 @@
             <div class="endpoint-header">
               <span class="method-badge">GET</span>
               <span class="endpoint-path">/exercises/<span style="color:var(--accent)">:id</span></span>
-              <span class="endpoint-desc">Fetch a single exercise by ID</span>
+              <span class="endpoint-desc">按 ID 获取单个动作</span>
             </div>
             <div class="endpoint-body">
               <div class="code-block">
-                <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                <button class="copy-btn" onclick="copyBlock(this)">复制</button>
                 <pre class="code-pre api-code" data-endpoint="getOne" id="code-getOne"></pre>
               </div>
             </div>
@@ -646,11 +645,11 @@
             <div class="endpoint-header">
               <span class="method-badge">GET</span>
               <span class="endpoint-path">/exercises<span style="color:var(--text-tertiary)">?page=1&amp;limit=20</span></span>
-              <span class="endpoint-desc">Paginated list of exercises</span>
+              <span class="endpoint-desc">分页动作列表</span>
             </div>
             <div class="endpoint-body">
               <div class="code-block">
-                <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                <button class="copy-btn" onclick="copyBlock(this)">复制</button>
                 <pre class="code-pre api-code" data-endpoint="getAll" id="code-getAll"></pre>
               </div>
             </div>
@@ -661,11 +660,11 @@
             <div class="endpoint-header">
               <span class="method-badge">GET</span>
               <span class="endpoint-path">/exercises<span style="color:var(--text-tertiary)">?category=Strength&amp;body_part=Chest</span></span>
-              <span class="endpoint-desc">Filter by category, body part, equipment</span>
+              <span class="endpoint-desc">按类别、部位、器材筛选</span>
             </div>
             <div class="endpoint-body">
               <div class="code-block">
-                <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                <button class="copy-btn" onclick="copyBlock(this)">复制</button>
                 <pre class="code-pre api-code" data-endpoint="getFiltered" id="code-getFiltered"></pre>
               </div>
             </div>
@@ -681,16 +680,16 @@
     <section class="section" id="ask-llm">
       <div class="section-header">
         <div class="section-num">3</div>
-        <h2 class="section-title">Ask Your LLM</h2>
+        <h2 class="section-title">咨询你的 LLM</h2>
       </div>
       <p class="section-desc">
-        Don't want to write a backend from scratch? Copy this prompt into ChatGPT, Claude, Gemini, or any LLM — it contains everything needed to generate a complete, production-ready API in one shot.
+        不想从零手写后端?把这段提示词复制到 ChatGPT、Claude、Gemini 或任意 LLM 中——它包含了一次性生成完整、可直接上线的 API 所需的全部信息。
       </p>
 
       <div class="section-body">
         <div class="llm-selectors">
           <div class="selector-group">
-            <div class="selector-label">Framework</div>
+            <div class="selector-label">框架</div>
             <div class="selector-tabs" id="framework-tabs">
               <button class="selector-btn active" data-fw="express">Express.js</button>
               <button class="selector-btn" data-fw="fastapi">FastAPI</button>
@@ -701,7 +700,7 @@
             </div>
           </div>
           <div class="selector-group">
-            <div class="selector-label">Database</div>
+            <div class="selector-label">数据库</div>
             <div class="selector-tabs" id="llm-db-tabs">
               <button class="selector-btn active" data-llmdb="postgresql">PostgreSQL</button>
               <button class="selector-btn" data-llmdb="mysql">MySQL</button>
@@ -720,9 +719,9 @@
               <rect x="4" y="4" width="9" height="11" rx="1.5"/>
               <path d="M11 4V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h1"/>
             </svg>
-            Copy Prompt
+            复制提示词
           </button>
-          <span class="llm-hint">Paste into ChatGPT, Claude, Gemini, or any LLM</span>
+          <span class="llm-hint">粘贴到 ChatGPT、Claude、Gemini 或任意 LLM</span>
         </div>
       </div>
     </section>
@@ -821,20 +820,20 @@ const DB_SQL = {
 const API_TEMPLATES = {
   curl: {
     getOne: (base) =>
-`# GET single exercise by ID
+`# 按 ID 获取单个动作
 curl -s "${base}/exercises/0001"
 
-# Pretty-print the response (Python 3 built-in)
+# 格式化输出响应(Python 3 内置)
 curl -s "${base}/exercises/0001" | python3 -m json.tool`,
 
     getAll: (base) =>
-`# GET all exercises — page 1, 20 per page
+`# 获取全部动作 —— 第 1 页,每页 20 条
 curl -s "${base}/exercises?page=1&limit=20"
 
-# Page 2, 50 per page
+# 第 2 页,每页 50 条
 curl -s "${base}/exercises?page=2&limit=50"
 
-# Response shape:
+# 响应结构:
 # {
 #   "data": [ ...exercises ],
 #   "total": 1324,
@@ -844,16 +843,16 @@ curl -s "${base}/exercises?page=2&limit=50"
 # }`,
 
     getFiltered: (base) =>
-`# Filter by category
+`# 按类别筛选
 curl -s "${base}/exercises?category=Strength&page=1&limit=20"
 
-# Filter by body part
+# 按部位筛选
 curl -s "${base}/exercises?body_part=Chest&page=1&limit=20"
 
-# Combine filters
+# 组合筛选
 curl -s "${base}/exercises?category=Strength&body_part=Chest&page=1&limit=20"
 
-# With equipment filter
+# 加上器材筛选
 curl -s "${base}/exercises?equipment=Barbell&target=Pectorals&page=1&limit=20"`,
   },
 
@@ -861,14 +860,14 @@ curl -s "${base}/exercises?equipment=Barbell&target=Pectorals&page=1&limit=20"`,
     getOne: (base) =>
 `const BASE_URL = '${base}';
 
-// GET /exercises/:id — fetch a single exercise
+// GET /exercises/:id — 获取单个动作
 async function getExercise(id) {
   const res = await fetch(\`\${BASE_URL}/exercises/\${id}\`);
   if (!res.ok) throw new Error(\`HTTP \${res.status}\`);
   return res.json();
 }
 
-// Usage
+// 用法
 const exercise = await getExercise('0001');
 console.log(exercise.name);        // "Barbell Bench Press"
 console.log(exercise.category);    // "Strength"
@@ -877,7 +876,7 @@ console.log(exercise.gif_url);     // "videos/0001.gif"`,
     getAll: (base) =>
 `const BASE_URL = '${base}';
 
-// GET /exercises?page=&limit= — paginated list
+// GET /exercises?page=&limit= — 分页列表
 async function getExercises({ page = 1, limit = 20 } = {}) {
   const params = new URLSearchParams({ page, limit });
   const res = await fetch(\`\${BASE_URL}/exercises?\${params}\`);
@@ -885,9 +884,9 @@ async function getExercises({ page = 1, limit = 20 } = {}) {
   return res.json();
 }
 
-// Usage
+// 用法
 const result = await getExercises({ page: 1, limit: 20 });
-console.log(result.data);       // Array of exercises
+console.log(result.data);       // 动作数组
 console.log(result.total);      // 1324
 console.log(result.page);       // 1
 console.log(result.totalPages); // 67`,
@@ -895,7 +894,7 @@ console.log(result.totalPages); // 67`,
     getFiltered: (base) =>
 `const BASE_URL = '${base}';
 
-// GET /exercises with filters
+// GET /exercises 带筛选参数
 async function getExercisesFiltered({
   page = 1,
   limit = 20,
@@ -915,7 +914,7 @@ async function getExercisesFiltered({
   return res.json();
 }
 
-// Usage
+// 用法
 const result = await getExercisesFiltered({
   category: 'Strength',
   bodyPart: 'Chest',
@@ -931,13 +930,13 @@ console.log(result.data[0].name); // e.g. "Barbell Bench Press"`,
 
 BASE_URL = "${base}"
 
-# GET /exercises/:id — fetch a single exercise
+# GET /exercises/:id — 获取单个动作
 def get_exercise(exercise_id: str) -> dict:
     res = requests.get(f"{BASE_URL}/exercises/{exercise_id}")
     res.raise_for_status()
     return res.json()
 
-# Usage
+# 用法
 exercise = get_exercise("0001")
 print(exercise["name"])      # Barbell Bench Press
 print(exercise["category"])  # Strength
@@ -948,7 +947,7 @@ print(exercise["gif_url"])   # videos/0001.gif`,
 
 BASE_URL = "${base}"
 
-# GET /exercises?page=&limit= — paginated list
+# GET /exercises?page=&limit= — 分页列表
 def get_exercises(page: int = 1, limit: int = 20) -> dict:
     res = requests.get(f"{BASE_URL}/exercises", params={
         "page": page,
@@ -957,9 +956,9 @@ def get_exercises(page: int = 1, limit: int = 20) -> dict:
     res.raise_for_status()
     return res.json()
 
-# Usage
+# 用法
 result = get_exercises(page=1, limit=20)
-print(result["data"])        # list of exercises
+print(result["data"])        # 动作列表
 print(result["total"])       # 1324
 print(result["page"])        # 1
 print(result["totalPages"])  # 67`,
@@ -969,7 +968,7 @@ print(result["totalPages"])  # 67`,
 
 BASE_URL = "${base}"
 
-# GET /exercises with filters
+# GET /exercises 带筛选参数
 def get_exercises_filtered(
     page: int = 1,
     limit: int = 20,
@@ -988,7 +987,7 @@ def get_exercises_filtered(
     res.raise_for_status()
     return res.json()
 
-# Usage
+# 用法
 result = get_exercises_filtered(
     category="Strength",
     body_part="Chest",
@@ -1004,7 +1003,7 @@ print(result["data"][0]["name"])  # e.g. Barbell Bench Press`,
 
 var client = new HttpClient { BaseAddress = new Uri("${base}") };
 
-// GET /exercises/:id — fetch a single exercise
+// GET /exercises/:id — 获取单个动作
 async Task<Exercise?> GetExerciseAsync(string id)
 {
     var res = await client.GetAsync($"/exercises/{id}");
@@ -1012,13 +1011,13 @@ async Task<Exercise?> GetExerciseAsync(string id)
     return await res.Content.ReadFromJsonAsync<Exercise>();
 }
 
-// Usage
+// 用法
 var exercise = await GetExerciseAsync("0001");
 Console.WriteLine(exercise?.Name);     // Barbell Bench Press
 Console.WriteLine(exercise?.Category); // Strength
 Console.WriteLine(exercise?.GifUrl);   // videos/0001.gif
 
-// Model
+// 数据模型
 record Exercise(
     string Id, string Name, string Category, string BodyPart,
     string Equipment, string? InstructionsEn, string? InstructionsEs, string? InstructionsIt, string? InstructionsTr, string? InstructionsRu,
@@ -1031,7 +1030,7 @@ record Exercise(
 
 var client = new HttpClient { BaseAddress = new Uri("${base}") };
 
-// GET /exercises?page=&limit= — paginated list
+// GET /exercises?page=&limit= — 分页列表
 async Task<PagedResult<Exercise>> GetExercisesAsync(int page = 1, int limit = 20)
 {
     return await client.GetFromJsonAsync<PagedResult<Exercise>>(
@@ -1039,12 +1038,12 @@ async Task<PagedResult<Exercise>> GetExercisesAsync(int page = 1, int limit = 20
     ) ?? throw new Exception("Null response");
 }
 
-// Usage
+// 用法
 var result = await GetExercisesAsync(page: 1, limit: 20);
 Console.WriteLine(result.Total);      // 1324
 Console.WriteLine(result.TotalPages); // 67
 
-// Models
+// 数据模型
 record Exercise(string Id, string Name, string Category, string BodyPart,
     string Equipment, string? InstructionsEn, string Target, string GifUrl);
 record PagedResult<T>(T[] Data, int Total, int Page, int Limit, int TotalPages);`,
@@ -1055,7 +1054,7 @@ using System.Web;
 
 var client = new HttpClient { BaseAddress = new Uri("${base}") };
 
-// GET /exercises with filters
+// GET /exercises 带筛选参数
 async Task<PagedResult<Exercise>> GetExercisesFilteredAsync(
     int page = 1, int limit = 20,
     string? category = null, string? bodyPart = null,
@@ -1074,7 +1073,7 @@ async Task<PagedResult<Exercise>> GetExercisesFilteredAsync(
     ) ?? throw new Exception("Null response");
 }
 
-// Usage
+// 用法
 var result = await GetExercisesFilteredAsync(
     category: "Strength", bodyPart: "Chest", page: 1, limit: 20);
 Console.WriteLine(result.Data[0].Name); // e.g. Barbell Bench Press`,
@@ -1088,7 +1087,7 @@ import java.net.http.*;
 HttpClient client = HttpClient.newHttpClient();
 String BASE_URL = "${base}";
 
-// GET /exercises/:id — fetch a single exercise
+// GET /exercises/:id — 获取单个动作
 String getExercise(String id) throws Exception {
     HttpRequest request = HttpRequest.newBuilder()
         .uri(URI.create(BASE_URL + "/exercises/" + id))
@@ -1102,10 +1101,10 @@ String getExercise(String id) throws Exception {
     if (response.statusCode() != 200)
         throw new RuntimeException("HTTP " + response.statusCode());
 
-    return response.body(); // parse with Jackson/Gson
+    return response.body(); // 用 Jackson/Gson 解析
 }
 
-// Usage (with Jackson ObjectMapper)
+// 用法(配合 Jackson ObjectMapper)
 // ObjectMapper mapper = new ObjectMapper();
 // Map<?,?> exercise = mapper.readValue(getExercise("0001"), Map.class);`,
 
@@ -1116,7 +1115,7 @@ import java.net.http.*;
 HttpClient client = HttpClient.newHttpClient();
 String BASE_URL = "${base}";
 
-// GET /exercises?page=&limit= — paginated list
+// GET /exercises?page=&limit= — 分页列表
 String getExercises(int page, int limit) throws Exception {
     String url = BASE_URL + "/exercises?page=" + page + "&limit=" + limit;
 
@@ -1133,7 +1132,7 @@ String getExercises(int page, int limit) throws Exception {
     // { "data": [...], "total": 1324, "page": 1, "limit": 20, "totalPages": 67 }
 }
 
-// Usage
+// 用法
 String json = getExercises(1, 20);`,
 
     getFiltered: (base) =>
@@ -1145,7 +1144,7 @@ import java.nio.charset.StandardCharsets;
 HttpClient client = HttpClient.newHttpClient();
 String BASE_URL = "${base}";
 
-// GET /exercises with filters
+// GET /exercises 带筛选参数
 String getExercisesFiltered(
     int page, int limit,
     String category, String bodyPart, String equipment
@@ -1169,7 +1168,7 @@ String getExercisesFiltered(
     return client.send(request, HttpResponse.BodyHandlers.ofString()).body();
 }
 
-// Usage
+// 用法
 String json = getExercisesFiltered(1, 20, "Strength", "Chest", null);`,
   },
 
@@ -1179,7 +1178,7 @@ String json = getExercisesFiltered(1, 20, "Strength", "Chest", null);`,
 
 define('BASE_URL', '${base}');
 
-// GET /exercises/:id — fetch a single exercise
+// GET /exercises/:id — 获取单个动作
 function getExercise(string $id): array
 {
     $url  = BASE_URL . '/exercises/' . urlencode($id);
@@ -1188,7 +1187,7 @@ function getExercise(string $id): array
     return json_decode($json, true);
 }
 
-// Usage
+// 用法
 $exercise = getExercise('0001');
 echo $exercise['name'];      // Barbell Bench Press
 echo $exercise['category'];  // Strength
@@ -1199,7 +1198,7 @@ echo $exercise['gif_url'];   // videos/0001.gif`,
 
 define('BASE_URL', '${base}');
 
-// GET /exercises?page=&limit= — paginated list
+// GET /exercises?page=&limit= — 分页列表
 function getExercises(int $page = 1, int $limit = 20): array
 {
     $params = http_build_query(['page' => $page, 'limit' => $limit]);
@@ -1208,9 +1207,9 @@ function getExercises(int $page = 1, int $limit = 20): array
     return json_decode($json, true);
 }
 
-// Usage
+// 用法
 $result = getExercises(1, 20);
-print_r($result['data']);       // array of exercises
+print_r($result['data']);       // 动作数组
 echo $result['total'];          // 1324
 echo $result['totalPages'];     // 67`,
 
@@ -1219,7 +1218,7 @@ echo $result['totalPages'];     // 67`,
 
 define('BASE_URL', '${base}');
 
-// GET /exercises with filters
+// GET /exercises 带筛选参数
 function getExercisesFiltered(
     int $page = 1,
     int $limit = 20,
@@ -1239,7 +1238,7 @@ function getExercisesFiltered(
     return json_decode($json, true);
 }
 
-// Usage
+// 用法
 $result = getExercisesFiltered(1, 20, 'Strength', 'Chest');
 echo $result['data'][0]['name']; // e.g. Barbell Bench Press`,
   },
@@ -1256,7 +1255,7 @@ import (
 
 const baseURL = "${base}"
 
-// GetExercise fetches a single exercise by ID
+// GetExercise 按 ID 获取单个动作
 func GetExercise(id string) (map[string]any, error) {
     resp, err := http.Get(baseURL + "/exercises/" + id)
     if err != nil {
@@ -1272,7 +1271,7 @@ func GetExercise(id string) (map[string]any, error) {
     return result, json.NewDecoder(resp.Body).Decode(&result)
 }
 
-// Usage
+// 用法
 func main() {
     exercise, err := GetExercise("0001")
     if err != nil { panic(err) }
@@ -1293,7 +1292,7 @@ import (
 
 const baseURL = "${base}"
 
-// GetExercises fetches paginated exercises
+// GetExercises 获取分页动作列表
 func GetExercises(page, limit int) (map[string]any, error) {
     params := url.Values{
         "page":  {strconv.Itoa(page)},
@@ -1309,7 +1308,7 @@ func GetExercises(page, limit int) (map[string]any, error) {
     return result, json.NewDecoder(resp.Body).Decode(&result)
 }
 
-// Usage
+// 用法
 func main() {
     result, err := GetExercises(1, 20)
     if err != nil { panic(err) }
@@ -1330,7 +1329,7 @@ import (
 
 const baseURL = "${base}"
 
-// GetExercisesFiltered fetches exercises with optional filters
+// GetExercisesFiltered 按可选筛选条件获取动作
 func GetExercisesFiltered(page, limit int, category, bodyPart, equipment string) (map[string]any, error) {
     params := url.Values{
         "page":  {strconv.Itoa(page)},
@@ -1350,7 +1349,7 @@ func GetExercisesFiltered(page, limit int, category, bodyPart, equipment string)
     return result, json.NewDecoder(resp.Body).Decode(&result)
 }
 
-// Usage
+// 用法
 func main() {
     result, err := GetExercisesFiltered(1, 20, "Strength", "Chest", "")
     if err != nil { panic(err) }
@@ -1385,37 +1384,37 @@ function buildLlmPrompt(fwKey, dbKey) {
   const db = DB_META[dbKey];
   const schema = DB_SQL[dbKey];
 
-  return `You are a senior ${fw.lang} developer. Build a complete REST API using ${fw.name} for an exercise/fitness database.
+  return `你是一名资深 ${fw.lang} 开发者。请使用 ${fw.name} 为健身动作数据库构建一个完整的 REST API。
 
-## Dataset Overview
-- 1,324 fitness exercises
-- Fields: id (string, e.g. "0001"), name, category, body_part, equipment, instructions_en (full text), instructions_es (Spanish text), instructions_it (Italian text), instructions_tr (Turkish text), instructions_ru (Russian text), instructions_zh (Chinese text), muscle_group, secondary_muscles (JSON array of strings), target, image (relative path like "images/0001.jpg"), gif_url (relative path like "videos/0001.gif"), created_at
+## 数据集概览
+- 1,324 个健身动作
+- 字段:id(字符串,如 "0001")、name、category、body_part、equipment、instructions_en(英文全文)、instructions_es(西班牙文)、instructions_it(意大利文)、instructions_tr(土耳其文)、instructions_ru(俄文)、instructions_zh(中文)、muscle_group、secondary_muscles(字符串 JSON 数组)、target、image(相对路径,如 "images/0001.jpg")、gif_url(相对路径,如 "videos/0001.gif")、created_at
 
-## Database Schema (${db.name})
+## 数据库表结构(${db.name})
 \`\`\`sql
 ${schema}
 \`\`\`
 
-## Required Endpoints
+## 必须实现的端点
 
 ### 1. GET /exercises/:id
-- Return a single exercise by its id
-- Return 404 JSON error if not found: { "error": "Exercise not found" }
+- 按 id 返回单个动作
+- 未找到时返回 404 JSON 错误:{ "error": "Exercise not found" }
 
 ### 2. GET /exercises
-Query parameters (all optional):
-- page (integer, default: 1)
-- limit (integer, default: 20, max: 100)
-- category (string, case-insensitive partial match)
-- body_part (string, case-insensitive partial match)
-- equipment (string, case-insensitive partial match)
-- muscle_group (string, case-insensitive partial match)
-- target (string, case-insensitive partial match)
+查询参数(均为可选):
+- page(整数,默认:1)
+- limit(整数,默认:20,最大:100)
+- category(字符串,不区分大小写的模糊匹配)
+- body_part(字符串,不区分大小写的模糊匹配)
+- equipment(字符串,不区分大小写的模糊匹配)
+- muscle_group(字符串,不区分大小写的模糊匹配)
+- target(字符串,不区分大小写的模糊匹配)
 
-Response format:
+响应格式:
 \`\`\`json
 {
-  "data": [ /* array of exercise objects */ ],
+  "data": [ /* 动作对象数组 */ ],
   "total": 1324,
   "page": 1,
   "limit": 20,
@@ -1424,36 +1423,36 @@ Response format:
 \`\`\`
 
 ### 3. GET /exercises/random
-- Return 1 random exercise object
+- 返回 1 个随机动作对象
 
 ### 4. GET /categories
-- Return sorted array of unique category strings
+- 返回去重排序后的 category 字符串数组
 
 ### 5. GET /body-parts
-- Return sorted array of unique body_part strings
+- 返回去重排序后的 body_part 字符串数组
 
 ### 6. GET /equipment
-- Return sorted array of unique equipment strings
+- 返回去重排序后的 equipment 字符串数组
 
-## Technical Requirements
-- Read DB connection string from an environment variable
-- Use parameterized queries (never interpolate user input into SQL)
-- Return JSON with Content-Type: application/json
-- Enable CORS for all origins (or read allowed origins from env var \`ALLOWED_ORIGINS\`)
-- Validate page/limit: must be positive integers; reject with 400 if invalid
-- Return 500 with { "error": "Internal server error" } on unexpected errors
-- Log each request: method, path, status code, duration in ms
+## 技术要求
+- 从环境变量读取数据库连接字符串
+- 使用参数化查询(绝不将用户输入直接拼接进 SQL)
+- 返回 JSON,Content-Type 为 application/json
+- 允许所有来源的 CORS(或从环境变量 \`ALLOWED_ORIGINS\` 读取允许的来源)
+- 校验 page/limit:必须为正整数,非法时返回 400
+- 出现意外错误时返回 500 与 { "error": "Internal server error" }
+- 记录每个请求:方法、路径、状态码、耗时(毫秒)
 
-## Packages to use
+## 需要使用的依赖包
 ${fw.pkg}
 
-## Deliverables
-1. Complete, runnable source code (not pseudocode — every file needed)
-2. Brief setup instructions:
-   - Install dependencies
-   - Run: \`${fw.run}\`
+## 交付物
+1. 完整、可直接运行的源代码(不是伪代码——包含所需的每个文件)
+2. 简要的启动说明:
+   - 安装依赖
+   - 运行:\`${fw.run}\`
 
-Write clean, production-quality code. Do not skip error handling.`;
+请编写整洁、可上生产环境的高质量代码,不要省略错误处理。`;
 }
 
 // ══════════════════════════════════════════════════
@@ -1484,9 +1483,9 @@ function switchDbTab(db) {
   createSqlEl.textContent = DB_SQL[db];
 }
 
-function copyToClipboard(text, btn, resetLabel = 'Copy') {
+function copyToClipboard(text, btn, resetLabel = '复制') {
   navigator.clipboard.writeText(text).then(() => {
-    btn.textContent = 'Copied!';
+    btn.textContent = '已复制!';
     btn.classList.add('copied');
     setTimeout(() => {
       btn.textContent = resetLabel;
@@ -1554,13 +1553,13 @@ async function generateInsertSql() {
 
   try {
     if (!EXERCISES) {
-      generateStatus.textContent = 'Loading exercise data…';
+      generateStatus.textContent = '正在加载动作数据…';
       const res = await fetch('data/exercises.json');
-      if (!res.ok) throw new Error('Could not load exercises.json');
+      if (!res.ok) throw new Error('加载 exercises.json 失败');
       EXERCISES = await res.json();
     }
 
-    generateStatus.textContent = 'Generating…';
+    generateStatus.textContent = '正在生成…';
 
     await new Promise(r => setTimeout(r, 10));
 
@@ -1572,9 +1571,9 @@ async function generateInsertSql() {
     a.download = `exercises_insert_${currentDb}.sql`;
     a.click();
     URL.revokeObjectURL(url);
-    generateStatus.textContent = `✓ Downloaded exercises_insert_${currentDb}.sql`;
+    generateStatus.textContent = `✓ 已下载 exercises_insert_${currentDb}.sql`;
   } catch (e) {
-    generateStatus.textContent = 'Error generating file.';
+    generateStatus.textContent = '生成文件出错。';
     console.error(e);
   }
 
@@ -1662,10 +1661,10 @@ document.querySelectorAll('#llm-db-tabs .selector-btn').forEach(btn => {
 
 copyPromptBtn.addEventListener('click', () => {
   navigator.clipboard.writeText(llmPromptBox.value).then(() => {
-    copyPromptBtn.textContent = '✓ Copied!';
+    copyPromptBtn.textContent = '✓ 已复制!';
     copyPromptBtn.classList.add('copied');
     setTimeout(() => {
-      copyPromptBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="9" height="11" rx="1.5"/><path d="M11 4V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h1"/></svg> Copy Prompt`;
+      copyPromptBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="9" height="11" rx="1.5"/><path d="M11 4V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h1"/></svg> 复制提示词`;
       copyPromptBtn.classList.remove('copied');
     }, 2500);
   });

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exercise Library</title>
+  <title>动作库 · ExerciseDB</title>
   <style>
     /* ── Reset ─────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1030,14 +1030,14 @@
   <aside class="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-logo">Exercise<span>DB</span></div>
-      <a class="db-setup-btn" href="setup.html" target="_blank" title="Database Setup">
+      <a class="db-setup-btn" href="setup.html" target="_blank" title="数据库设置">
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
           <ellipse cx="8" cy="4" rx="6" ry="2.5"/>
           <path d="M2 4v3c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5V4"/>
           <path d="M2 7v3c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5V7"/>
           <path d="M2 10v2c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5v-2"/>
         </svg>
-        DB Setup
+        数据库设置
       </a>
     </div>
     <div class="sidebar-body">
@@ -1047,25 +1047,25 @@
           <circle cx="6.5" cy="6.5" r="4.5"/>
           <path d="M10.5 10.5L14 14" stroke-linecap="round"/>
         </svg>
-        <input type="search" class="search-box" id="search" placeholder="Search exercises…" autocomplete="off" />
-        <button class="search-clear" id="search-clear" aria-label="Clear search">×</button>
+        <input type="search" class="search-box" id="search" placeholder="搜索动作(支持中英文)…" autocomplete="off" />
+        <button class="search-clear" id="search-clear" aria-label="清空搜索">×</button>
       </div>
 
       <!-- Category filter -->
       <div class="filter-section">
-        <div class="filter-summary">Category</div>
+        <div class="filter-summary">类别</div>
         <div class="filter-options" id="category-chips"></div>
       </div>
 
       <!-- Equipment filter -->
       <div class="filter-section">
-        <div class="filter-summary">Equipment</div>
+        <div class="filter-summary">器材</div>
         <div class="filter-options" id="equipment-chips"></div>
       </div>
 
       <!-- Target filter -->
       <div class="filter-section">
-        <div class="filter-summary">Target Muscle</div>
+        <div class="filter-summary">目标肌群</div>
         <div class="filter-options" id="target-chips"></div>
       </div>
     </div>
@@ -1091,10 +1091,10 @@
   <div class="db-panel" id="db-panel">
     <div class="db-panel-header">
       <div>
-        <h2 class="db-panel-title" id="db-setup-title">Database Setup</h2>
-        <p class="db-panel-subtitle">Import 1,324 exercises into your database in 3 steps.</p>
+        <h2 class="db-panel-title" id="db-setup-title">数据库设置</h2>
+        <p class="db-panel-subtitle">按以下 3 步将 1,324 个动作导入你的数据库。</p>
       </div>
-      <button class="db-panel-close" id="db-setup-close" aria-label="Close">✕</button>
+      <button class="db-panel-close" id="db-setup-close" aria-label="关闭">✕</button>
     </div>
 
     <!-- DB Tabs -->
@@ -1110,10 +1110,10 @@
       <div class="db-step">
         <div class="db-step-num">1</div>
         <div class="db-step-body">
-          <h3 class="db-step-title">Create Table</h3>
-          <p class="db-step-desc">Run this in your database client (SSMS, DBeaver, pgAdmin, etc.):</p>
+          <h3 class="db-step-title">创建数据表</h3>
+          <p class="db-step-desc">在数据库客户端(SSMS、DBeaver、pgAdmin 等)中执行以下语句:</p>
           <div class="code-block">
-            <button class="copy-btn" id="copy-create-btn">Copy</button>
+            <button class="copy-btn" id="copy-create-btn">复制</button>
             <pre class="code-pre" id="create-table-sql"></pre>
           </div>
         </div>
@@ -1123,13 +1123,13 @@
       <div class="db-step">
         <div class="db-step-num">2</div>
         <div class="db-step-body">
-          <h3 class="db-step-title">Import Data</h3>
-          <p class="db-step-desc">Generate a <code>.sql</code> file with all 1,324 INSERT statements — runs in any DB client. The file is built entirely in your browser, nothing is uploaded.</p>
+          <h3 class="db-step-title">导入数据</h3>
+          <p class="db-step-desc">生成包含全部 1,324 条 INSERT 语句的 <code>.sql</code> 文件——可在任何数据库客户端中执行。文件完全在浏览器本地生成,不会上传任何数据。</p>
           <button class="generate-btn" id="generate-sql-btn">
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
               <path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/>
             </svg>
-            Generate INSERT SQL
+            生成 INSERT SQL
           </button>
           <span class="generate-status" id="generate-status"></span>
         </div>
@@ -1139,12 +1139,11 @@
       <div class="db-step">
         <div class="db-step-num">3</div>
         <div class="db-step-body">
-          <h3 class="db-step-title">Media Files</h3>
-          <p class="db-step-desc">Copy the <code>images/</code> and <code>videos/</code> folders to your web server root (or a CDN). The <code>image</code> and <code>gif_url</code> columns store relative paths — prepend your base URL in your app if needed.</p>
+          <h3 class="db-step-title">媒体文件</h3>
+          <p class="db-step-desc">将 <code>media/</code> 文件夹复制到你的 Web 服务器根目录(或 CDN)。<code>image</code> 和 <code>gif_url</code> 列存储的是相对路径——在应用中拼接你的基础 URL 即可。</p>
           <div class="code-block media-layout-block">
             <pre class="code-pre">your-server.com/
-├── images/   ← 1,324 JPG thumbnails
-└── videos/   ← 1,324 GIF animations</pre>
+└── media/    ← 1,324 个 GIF 动作演示</pre>
           </div>
         </div>
       </div>
@@ -1157,7 +1156,7 @@
   <div class="modal-panel" id="modal-panel">
     <div class="modal-header">
       <h2 class="modal-title" id="modal-title"></h2>
-      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      <button class="modal-close" id="modal-close" aria-label="关闭">✕</button>
     </div>
     <div class="modal-media">
       <img class="modal-gif" id="modal-gif" alt="" />
@@ -1187,6 +1186,38 @@
 
   // Equipment items to show initially (rest behind "show more")
   const EQUIP_INITIAL = 10;
+
+  // ── 中英文值映射(仅用于显示与搜索,数据保持原值)──
+  const ZH = {
+    // category / body_part
+    'back': '背部', 'cardio': '有氧', 'chest': '胸部', 'lower arms': '前臂',
+    'lower legs': '小腿', 'neck': '颈部', 'shoulders': '肩部', 'upper arms': '上臂',
+    'upper legs': '大腿', 'waist': '腰部',
+    // equipment
+    'assisted': '辅助器械', 'band': '弹力带', 'barbell': '杠铃', 'body weight': '自重',
+    'bosu ball': '波速球', 'cable': '绳索', 'dumbbell': '哑铃', 'elliptical machine': '椭圆机',
+    'ez barbell': 'EZ 杠铃', 'hammer': '锤式器械', 'kettlebell': '壶铃', 'leverage machine': '杠杆机',
+    'medicine ball': '药球', 'olympic barbell': '奥林匹克杠铃', 'resistance band': '阻力带',
+    'roller': '滚轴', 'rope': '战绳', 'skierg machine': '划雪机', 'sled machine': '雪橇机',
+    'smith machine': '史密斯机', 'stability ball': '瑞士球', 'stationary bike': '动感单车',
+    'stepmill machine': '爬楼机', 'tire': '轮胎', 'trap bar': '六角杠铃',
+    'upper body ergometer': '上肢功率车', 'weighted': '负重', 'wheel roller': '健腹轮',
+    // target
+    'abductors': '外展肌', 'abs': '腹肌', 'adductors': '内收肌', 'biceps': '肱二头肌',
+    'calves': '小腿肌', 'cardiovascular system': '心血管系统', 'delts': '三角肌',
+    'forearms': '前臂肌', 'glutes': '臀肌', 'hamstrings': '腘绳肌', 'lats': '背阔肌',
+    'levator scapulae': '肩胛提肌', 'pectorals': '胸大肌', 'quads': '股四头肌',
+    'serratus anterior': '前锯肌', 'spine': '脊柱', 'traps': '斜方肌', 'triceps': '肱三头肌',
+    'upper back': '上背肌群',
+    // muscle_group / secondary_muscles
+    'abdominals': '腹肌', 'ankle stabilizers': '踝关节稳定肌', 'ankles': '踝关节',
+    'core': '核心肌群', 'deltoids': '三角肌', 'hands': '手部', 'hip flexors': '髋屈肌',
+    'latissimus dorsi': '背阔肌', 'lower back': '下背', 'obliques': '腹斜肌',
+    'quadriceps': '股四头肌', 'rhomboids': '菱形肌', 'rotator cuff': '肩袖',
+    'soleus': '比目鱼肌', 'trapezius': '斜方肌', 'wrist extensors': '腕伸肌',
+    'wrist flexors': '腕屈肌', 'wrists': '手腕',
+  };
+  const zh = (v) => (v && ZH[v]) ? ZH[v] : (v || '');
 
   // ── DOM Refs ───────────────────────────────────────
   const gridEl        = document.getElementById('exercise-grid');
@@ -1222,9 +1253,11 @@
   function init() {
     state.exercises = EXERCISES;
 
-    // Pre-compute search index per exercise
+    // Pre-compute search index per exercise (含中文标签,支持中文搜索)
     state.exercises.forEach(ex => {
-      ex._idx = `${ex.name} ${ex.category} ${ex.target} ${ex.equipment} ${ex.muscle_group}`.toLowerCase();
+      const zhLabels = [ex.category, ex.body_part, ex.equipment, ex.target, ex.muscle_group]
+        .map(zh).join(' ');
+      ex._idx = `${ex.name} ${ex.category} ${ex.target} ${ex.equipment} ${ex.muscle_group} ${zhLabels}`.toLowerCase();
     });
 
     buildFilterOptions();
@@ -1264,7 +1297,7 @@
       // Show more button
       const moreBtn = document.createElement('button');
       moreBtn.className = 'chip filter-show-more';
-      moreBtn.textContent = `+${rest.length} more`;
+      moreBtn.textContent = `+${rest.length} 更多`;
       moreBtn.addEventListener('click', () => {
         hiddenWrap.style.display = 'flex';
         moreBtn.remove();
@@ -1276,7 +1309,7 @@
   function makeChip(value, filterKey) {
     const btn = document.createElement('button');
     btn.className = 'chip';
-    btn.textContent = value;
+    btn.textContent = zh(value);
     btn.dataset.filter = filterKey;
     btn.dataset.value  = value;
     return btn;
@@ -1315,7 +1348,7 @@
     if (slice.length === 0) {
       const empty = document.createElement('div');
       empty.className = 'empty-state';
-      empty.innerHTML = '<p>🔍</p><p>No exercises found</p>';
+      empty.innerHTML = '<p>🔍</p><p>未找到匹配的动作</p>';
       gridEl.appendChild(empty);
       spinnerEl.classList.remove('visible');
       return;
@@ -1380,11 +1413,11 @@
 
     const catTag = document.createElement('span');
     catTag.className = 'tag tag-cat';
-    catTag.textContent = ex.category;
+    catTag.textContent = zh(ex.category);
 
     const equipTag = document.createElement('span');
     equipTag.className = 'tag tag-equip';
-    equipTag.textContent = ex.equipment;
+    equipTag.textContent = zh(ex.equipment);
 
     tags.appendChild(catTag);
     tags.appendChild(equipTag);
@@ -1418,8 +1451,8 @@
     const total = state.filtered.length;
     const all   = state.exercises.length;
     countEl.textContent = total === all
-      ? `${all.toLocaleString()} exercises`
-      : `${total.toLocaleString()} of ${all.toLocaleString()} exercises`;
+      ? `共 ${all.toLocaleString()} 个动作`
+      : `${total.toLocaleString()} / ${all.toLocaleString()} 个动作`;
   }
 
   function updateActiveBadges() {
@@ -1432,7 +1465,7 @@
         hasAny = true;
         const badge = document.createElement('span');
         badge.className = 'active-badge';
-        badge.innerHTML = `${val}<button class="active-badge-remove" data-filter="${key}" data-value="${val}" aria-label="Remove ${val}">×</button>`;
+        badge.innerHTML = `${zh(val)}<button class="active-badge-remove" data-filter="${key}" data-value="${val}" aria-label="移除 ${zh(val)}">×</button>`;
         activeFilEl.appendChild(badge);
       });
     };
@@ -1444,7 +1477,7 @@
     if (hasAny) {
       const clearAll = document.createElement('button');
       clearAll.className = 'clear-all';
-      clearAll.textContent = 'Clear all';
+      clearAll.textContent = '清除全部';
       clearAll.addEventListener('click', clearAllFilters);
       activeFilEl.appendChild(clearAll);
     }
@@ -1475,14 +1508,14 @@
     // Meta chips
     modalMeta.innerHTML = '';
     const metaItems = [
-      { label: 'Body Part', value: ex.body_part || ex.category },
-      { label: 'Equipment', value: ex.equipment },
-      { label: 'Target',    value: ex.target },
+      { label: '部位', value: ex.body_part || ex.category },
+      { label: '器材', value: ex.equipment },
+      { label: '目标肌群',    value: ex.target },
     ];
     metaItems.forEach(({ label, value }) => {
       const chip = document.createElement('div');
       chip.className = 'meta-chip';
-      chip.innerHTML = `<span class="meta-chip-label">${label}</span><span class="meta-chip-value">${value}</span>`;
+      chip.innerHTML = `<span class="meta-chip-label">${label}</span><span class="meta-chip-value">${zh(value)}</span>`;
       modalMeta.appendChild(chip);
     });
 
@@ -1494,7 +1527,7 @@
 
     const musclesHeader = document.createElement('div');
     musclesHeader.className = 'modal-muscles-label';
-    musclesHeader.textContent = 'Muscles';
+    musclesHeader.textContent = '肌群';
     modalMuscles.appendChild(musclesHeader);
 
     const musclesGrid = document.createElement('div');
@@ -1511,7 +1544,7 @@
       names.forEach(name => {
         const t = document.createElement('span');
         t.className = 'muscle-tag' + (isPrimary ? ' primary' : '');
-        t.textContent = name;
+        t.textContent = zh(name);
         row.appendChild(t);
       });
       group.appendChild(lbl);
@@ -1519,21 +1552,21 @@
       return group;
     };
 
-    if (primaryMuscles.length > 0)   musclesGrid.appendChild(makeMuscleGroup('Primary', primaryMuscles, true));
-    if (secondaryMuscles.length > 0)  musclesGrid.appendChild(makeMuscleGroup('Secondary', secondaryMuscles, false));
+    if (primaryMuscles.length > 0)   musclesGrid.appendChild(makeMuscleGroup('主要肌群', primaryMuscles, true));
+    if (secondaryMuscles.length > 0)  musclesGrid.appendChild(makeMuscleGroup('辅助肌群', secondaryMuscles, false));
     if (primaryMuscles.length > 0 || secondaryMuscles.length > 0) modalMuscles.appendChild(musclesGrid);
 
     // Instructions — format is always { en: [...], es: [...], it: [...], tr: [...], ru: [...] }
     modalInstr.innerHTML = '';
     const LANG_LABELS = { en: 'English', es: 'Español', it: 'Italiano', tr: 'Türkçe', ru: 'Русский', zh: '简体中文' };
-    const langs = ['en', 'es', 'it', 'tr', 'ru', 'zh']
+    const langs = ['zh', 'en', 'es', 'it', 'tr', 'ru']
       .map(code => ({ code, steps: ex.instruction_steps?.[code] ?? [] }))
       .filter(l => l.steps.length > 0);
 
     if (langs.length > 0) {
       const instrLabel = document.createElement('span');
       instrLabel.className = 'modal-instructions-label';
-      instrLabel.textContent = 'Instructions';
+      instrLabel.textContent = '动作步骤';
       modalInstr.appendChild(instrLabel);
 
       const list = document.createElement('ol');
@@ -1774,9 +1807,9 @@
 
   function copyToClipboard(text, btn) {
     navigator.clipboard.writeText(text).then(() => {
-      btn.textContent = 'Copied!';
+      btn.textContent = '已复制!';
       btn.classList.add('copied');
-      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      setTimeout(() => { btn.textContent = '复制'; btn.classList.remove('copied'); }, 2000);
     });
   }
 
@@ -1837,7 +1870,7 @@
 
   function generateInsertSql() {
     generateBtn.disabled = true;
-    generateStatus.textContent = 'Generating…';
+    generateStatus.textContent = '正在生成…';
 
     setTimeout(() => {
       try {
@@ -1849,9 +1882,9 @@
         a.download = `exercises_insert_${currentDb}.sql`;
         a.click();
         URL.revokeObjectURL(url);
-        generateStatus.textContent = `✓ Downloaded exercises_insert_${currentDb}.sql`;
+        generateStatus.textContent = `✓ 已下载 exercises_insert_${currentDb}.sql`;
       } catch (e) {
-        generateStatus.textContent = 'Error generating file.';
+        generateStatus.textContent = '生成文件出错。';
         console.error(e);
       }
       generateBtn.disabled = false;
